@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222035758) do
+ActiveRecord::Schema.define(version: 20170222041238) do
+
+  create_table "mentor_mentees", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "mentee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",       null: false
